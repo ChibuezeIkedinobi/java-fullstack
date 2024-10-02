@@ -20,6 +20,7 @@ public class Assignment1 {
         String reverse = "";
         for (int i = 0; i < input.length(); i++) {
             reverse =  input.charAt(i) + reverse;
+
         }
         System.out.println(reverse);
         System.out.println("-------------------------");
