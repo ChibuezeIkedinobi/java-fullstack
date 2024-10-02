@@ -2,7 +2,7 @@ package algorithm;
 
 public class AllCharactersAreUnique {
     public static void main(String[] args) {
-//        System.out.println(hasUniqueChar("abcdef"));
+        System.out.println(hasUniqueChar("abcdef"));
         System.out.println(hasUniqueChar("abbcdddef"));
     }
 
