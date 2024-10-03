@@ -61,6 +61,7 @@ public class Main {
         System.out.println("_______________________________________________");
 
         principal.expel(student2);
+        principal.expel(student2);
         System.out.println("_______________________________________________");
 
         System.out.println("💥Student List after expelling Kelvin💥");
