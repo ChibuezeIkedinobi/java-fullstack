@@ -4,8 +4,8 @@ import java.util.List;
 
 public class ClassRoom {
 
-    private List<Student> studentList;
-    private List<Course> courseList;
+    private final List<Student> studentList;
+    private final List<Course> courseList;
 
     public ClassRoom(List<Student> studentList, List<Course> courseList) {
         this.studentList = studentList;
