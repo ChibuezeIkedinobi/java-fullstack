@@ -5,8 +5,8 @@ public class NonAcademic extends Staff {
         super(name, role, salary);
     }
 
-    public void duty() {
-        System.out.println(getName() + " is a "+ getRole());
+    public String duty() {
+        return getName() + " is a "+ getRole();
     }
 
 

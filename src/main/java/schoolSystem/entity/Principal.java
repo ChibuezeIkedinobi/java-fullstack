@@ -13,13 +13,12 @@ public class Principal extends Staff implements PrincipalTasks {
     }
 
     @Override
-    public void expel(Student student) {
+    public String expel(Student student) {
         if (classRoom.getStudentList().contains(student)) {
             classRoom.getStudentList().remove(student);
-            System.out.println(student.getName() + " has been expelled.⚔️");
-        } else {
-            System.out.println(student.getName()+ " has already been expelled");
+            return student.getName() + " has been expelled.⚔️";
         }
+        return student.getName() + " has already been expelled.⚔️";
     }
 
     @Override

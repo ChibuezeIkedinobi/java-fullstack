@@ -2,14 +2,18 @@ package schoolSystem;
 
 import schoolSystem.entity.*;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
 public class Main {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
 
-        Teacher teacher = new Teacher("Segun", "Teacher", 2150000);
-        teacher.teachCourse("Core Java");
+        Teacher teacher = new Teacher();
+        List<Teacher> teacherList = teacher.readFile();
+
+        Teacher teacher1 = teacherList.get(0);
+        Teacher teacher2 = teacherList.get(1);
 
         NonAcademic nonAcademic1 = new NonAcademic("Jumoke", "Cleaner", 50000);
         NonAcademic nonAcademic2 = new NonAcademic("Bruno", "Security Man", 65000);
@@ -18,29 +22,33 @@ public class Main {
         System.out.println();
         System.out.println("_________Courses__________________");
 
-        Student student1 = new Student("Stephanie", 25);
-        Student student2 = new Student("Kelvin", 20);
 
-        List<Student> studentList = new ArrayList<>();
+        Student student = new Student();
+        List<Student> studentList = student.readFile();
+
         List<Course> courseList = new ArrayList<>();
 
         Course coreJava = new Course("Core Java");
-        Course react = new Course("ReactJs");
+        Course agile = new Course("Agile Methodologies");
 
         ClassRoom classRoom = new ClassRoom(studentList, courseList);
-        classRoom.addStudent(student1);
-        classRoom.addStudent(student2);
         classRoom.addCourse(coreJava);
-        classRoom.addCourse(react);
+        classRoom.addCourse(agile);
 
         classRoom.displayCourses();
+        System.out.println();
+        teacher1.teachCourse(coreJava.getName());
+        teacher2.teachCourse(agile.getName());
 
         System.out.println();
         System.out.println("_________Student Courses__________________");
 
-        student1.enrollCourse(coreJava);
-        student1.enrollCourse(react);
-        student2.enrollCourse(react);
+        Student student1 = studentList.get(0);
+        Student student2 = studentList.get(1);
+
+        System.out.println(student1.enrollCourse(coreJava));
+        System.out.println(student1.enrollCourse(agile));
+        System.out.println(student2.enrollCourse(agile));
 
         System.out.println();
         System.out.println("_________Admissions__________________");
@@ -60,8 +68,8 @@ public class Main {
         classRoom.displayStudents();
         System.out.println("_______________________________________________");
 
-        principal.expel(student2);
-        principal.expel(student2);
+        System.out.println(principal.expel(student2));
+        System.out.println(principal.expel(student2));
         System.out.println("_______________________________________________");
 
         System.out.println("💥Student List after expelling Kelvin💥");
@@ -70,9 +78,9 @@ public class Main {
         System.out.println();
         System.out.println("_________Non Academic Staffs__________________");
 
-        nonAcademic1.duty();
-        nonAcademic2.duty();
-        nonAcademic3.duty();
+        System.out.println(nonAcademic1.duty());
+        System.out.println(nonAcademic2.duty());
+        System.out.println(nonAcademic3.duty());
 
     }
 }
