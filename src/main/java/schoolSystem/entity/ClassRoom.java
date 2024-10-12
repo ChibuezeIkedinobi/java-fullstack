@@ -28,15 +28,19 @@ public class ClassRoom {
         courseList.add(course);
     }
 
-    public void displayCourses() {
+    public String displayCourses() {
+        StringBuilder courseList1 = new StringBuilder();
         for (Course course : getCourseList()) {
-            System.out.println(course.getName());
+            courseList1.append(course.getName()).append("\n");
         }
+        return courseList1.toString();
     }
 
-    public void displayStudents() {
+    public String displayStudents() {
+        StringBuilder studentList1 = new StringBuilder();
         for (Student student : getStudentList()) {
-            System.out.println(student.getName());
+            studentList1.append(student.getName()).append("\n");
         }
+        return studentList1.toString();
     }
 }

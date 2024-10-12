@@ -35,7 +35,7 @@ public class Main {
         classRoom.addCourse(coreJava);
         classRoom.addCourse(agile);
 
-        classRoom.displayCourses();
+        System.out.println(classRoom.displayCourses());
         System.out.println();
         teacher1.teachCourse(coreJava.getName());
         teacher2.teachCourse(agile.getName());
@@ -64,16 +64,17 @@ public class Main {
         System.out.println();
         System.out.println("_________Expelling Students__________________");
 
-        System.out.println("💥Student List after expelling Kelvin💥");
-        classRoom.displayStudents();
+        System.out.println("💥Student List before expelling Kelvin💥");
+        System.out.println(classRoom.displayStudents());
         System.out.println("_______________________________________________");
 
         System.out.println(principal.expel(student2));
         System.out.println(principal.expel(student2));
+        System.out.println(principal.expel(student2));
         System.out.println("_______________________________________________");
 
         System.out.println("💥Student List after expelling Kelvin💥");
-        classRoom.displayStudents();
+        System.out.println(classRoom.displayStudents());
 
         System.out.println();
         System.out.println("_________Non Academic Staffs__________________");
